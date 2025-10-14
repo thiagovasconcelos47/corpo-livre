@@ -10,80 +10,189 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #0a0a0a;
-      color: #f1f1f1;
-      text-align: center;
+      color: #fff;
+      overflow-x: hidden;
     }
+
+    /* Cabeçalho fixo */
     header {
-      background: linear-gradient(90deg, #111, #222);
-      padding: 20px;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
       border-bottom: 2px solid #e63946;
     }
-    h1 {
+
+    header h1 {
       color: #e63946;
-      font-size: 2.5rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
-    p {
-      margin: 20px;
-      font-size: 1.1rem;
-      color: #ccc;
+
+    nav a {
+      color: #f1f1f1;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1rem;
+      transition: 0.3s;
     }
+
+    nav a:hover {
+      color: #e63946;
+    }
+
+    /* Hero */
     .hero {
-      background-image: url('https://images.unsplash.com/photo-1594737625785-cbdb0b1e68c2?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1594737625785-cbdb0b1e68c2?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease;
     }
+
     .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 15px 30px;
+      padding: 10px 25px;
       border-radius: 10px;
-      font-size: 2rem;
-      color: #fff;
     }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #ddd;
+      margin-bottom: 25px;
+    }
+
     .btn {
-      margin-top: 25px;
       background-color: #e63946;
       padding: 12px 25px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-size: 1.1rem;
       color: white;
       cursor: pointer;
       transition: 0.3s;
     }
+
     .btn:hover {
-      background-color: #ff4757;
+      background-color: #ff4f5a;
+      transform: scale(1.05);
     }
+
+    /* Seção sobre */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      color: #ccc;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* Rodapé */
     footer {
       background: #111;
-      padding: 15px;
+      text-align: center;
+      padding: 20px;
+      color: #888;
       font-size: 0.9rem;
-      color: #777;
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+
+    /* Animação */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Corpo Livre</h1>
-    <p>Transforme seu corpo e mente através da Calistenia</p>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
   <section class="hero">
     <h2>Domine o seu corpo, liberte sua mente</h2>
+    <p>A Calistenia é mais do que um treino — é um estilo de vida que transforma força, foco e liberdade.</p>
     <button class="btn" onclick="window.location.href='https://wa.me/55SEUNUMEROAQUI'">Comece Agora</button>
   </section>
 
+  <section id="sobre">
+    <h3>O que é Calistenia?</h3>
+    <p>A calistenia utiliza o peso do próprio corpo para desenvolver força, equilíbrio e consciência corporal. É um treino funcional, acessível e extremamente eficaz para qualquer nível.</p>
+  </section>
+
+  <section id="beneficios">
+    <h3>Benefícios</h3>
+    <p>Melhora a mobilidade, define os músculos, aumenta o controle corporal e fortalece a mente. Tudo isso sem depender de equipamentos caros ou academias lotadas.</p>
+  </section>
+
+  <section id="contato">
+    <h3>Entre em Contato</h3>
+    <p>Quer começar sua jornada? Fale comigo no WhatsApp e receba um plano de treino personalizado.</p>
+    <button class="btn" onclick="window.location.href='https://wa.me/55SEUNUMEROAQUI'">Falar no WhatsApp</button>
+  </section>
+
   <footer>
-    <p>© 2025 Corpo Livre | Calistenia e Liberdade</p>
+    <p>© 2025 Corpo Livre | Desenvolvido por Thiago Vasconcelos</p>
   </footer>
 </body>
 </html>
